@@ -8,3 +8,10 @@ Muitos brasileiros tem a necessidade de utilizar de seus transportes pessoais pa
 - Qual o preço no posto mais próximo? Se sim, compensa abastecer em um mais distante?
 
 Sendo assim, a api pública do GasOnLine tem por objetivo disponibilizar dados de postos de combustíveis pelo estado de São Paulo
+
+### Time:
+ - Dério Lucas
+ - Gabriel Henke
+ - Heitor de Andrade
+ - Mateus Teodoro
+ - Pedro Zulian
