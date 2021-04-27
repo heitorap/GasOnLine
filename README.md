@@ -15,3 +15,8 @@ Sendo assim, a api pública do GasOnLine tem por objetivo disponibilizar dados d
  - Heitor de Andrade
  - Mateus Teodoro
  - Pedro Zulian
+
+
+### Info extra:
+ - https://www.figma.com/file/FQYDkYpvqAF6Wlh8IQd1fQ/GasOnLine?node-id=0%3A1
+ - ![Diagrama do banco](https://user-images.githubusercontent.com/55493232/116299500-298bba00-a774-11eb-95f8-5c6a0d8d32e0.png)
