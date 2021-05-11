@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import posto from "./routes/Posto";
+import posto from "./routes/posto";
 
 const app = express();
 
