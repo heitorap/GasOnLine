@@ -1,65 +1,48 @@
-import Head from 'next/head'
+import React, { useState } from "react";
+import { useRouter } from "next/router";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+// import { ErrorToast } from "../components/Toast/Toast";
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className="main">
+      <img className={styles.logo} src="/images/gasonline.png"/>
+      <form onSubmit={(event) => handleSubmit(event)}>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <div className={styles.fuel}>
+        <div>
+          <button className={styles.gasoline} onClick={() => console.log("alert")}>Gasolina</button>
         </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+        <div>
+          <button className={styles.etanol}>Etanol</button>
+        </div>
+
+        <div>
+          <button className={styles.diesel}>Diesel</button>
+        </div>
+      </div>
+        
+      <div className={styles.searchBy}>Buscar por</div>
+        
+      <div className={styles.search}>
+      <FontAwesomeIcon className={styles.icon} icon={faSearch} />
+        <input
+              type="text"
+              placeholder="Cidade"
+              className={styles.searchCity}
+              maxLength="40"
+        />
+      </div>
+        <input className={styles.buttonSearch} type="submit" value="Pesquisar"></input>
+    </form>
+  </div>
   )
 }
