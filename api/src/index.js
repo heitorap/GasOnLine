@@ -13,4 +13,4 @@ app.use(bodyParser.json());
 app.use("/posto", posto);
 app.use("/cidade", cidade);
 
-app.listen(3000);
+app.listen(80);
