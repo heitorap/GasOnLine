@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import posto from "./routes/posto";
 import cidade from './routes/cidade';
+import combustivel from "./routes/combustivel";
 
 const app = express();
 
@@ -12,5 +13,6 @@ app.use(bodyParser.json());
 
 app.use("/posto", posto);
 app.use("/cidade", cidade);
+app.use("/combustivel", combustivel);
 
-app.listen(80);
+app.listen(3000);
