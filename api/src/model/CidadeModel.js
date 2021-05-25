@@ -60,7 +60,7 @@ const cidadeModel = {
     });
   },
 
-  cadastrarCidade(nomeCidade) {
+  cadastrar(nomeCidade) {
     const query = `INSERT INTO cidade (name) VALUES (?);`;
     return new Promise((resolve, reject) => {
       db.query(query, [nomeCidade], (error, result) => {

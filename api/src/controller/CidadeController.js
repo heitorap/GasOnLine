@@ -22,9 +22,12 @@ const cidadeController = {
     },
 
     cadastrar(req, res) {
-        cidadeModel.cadastrarCidade(req.body.nome)
+        cidadeModel.cadastrar(req.body.nome)
         .then((response) => {
             res.status(201).send({ mensagem: 'Cidade cadastrada', status: 201 })
+        })
+        .catch((error) => {
+            res.status(500).send(error);
         })
     }
 };
