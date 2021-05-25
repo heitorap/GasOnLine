@@ -19,6 +19,13 @@ const cidadeController = {
             .catch((error) => {
                 res.status(500).send(error);
             })
+    },
+
+    cadastrar(req, res) {
+        cidadeModel.cadastrarCidade(req.body.nome)
+        .then((response) => {
+            res.status(201).send({ mensagem: 'Cidade cadastrada', status: 201 })
+        })
     }
 };
 
