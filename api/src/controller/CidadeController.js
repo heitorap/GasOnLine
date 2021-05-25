@@ -12,7 +12,7 @@ const cidadeController = {
     },
     
     listarPostos(req, res) {
-        cidadeModel.listarPostos(req.body.cidade)
+        cidadeModel.listarPostos(req.params.cidade)
             .then((response) => {
                 res.status(200).send(response);
             })
