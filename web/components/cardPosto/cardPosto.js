@@ -19,20 +19,32 @@ export default function cardPosto() {
 
   const colors = ['red', 'green', 'blue']
 
+  const endereco = {
+    Bairro: 'Centro',
+    Numero: '55',
+    Rua: 'Rio Branco'
+  }
+
 
   return (
     <div>
       {postos.map((posto) =>
         <div className={styles.container}>
           <div className={styles.header}>
-            <span className={styles.title}>{posto.name}</span>
+            <span className={styles.title}>{posto.Posto}</span>
             <img className={styles.edit} src="/assets/create.svg" alt="edit"></img>
           </div>
-          {/* <div className={s.content}>
-            <div>
-              <span>{posto.combustivel_type.name}</span>
-            </div> */}
+          <span className={styles.cityArea} >{posto.cidade}</span>
+          <div className={styles.content}>
+              <span style={{color: colors[0]}}>{posto.Tipo} - {posto.preco}</span>
+              <span style={{color: colors[1]}}>{posto.Tipo} - {posto.preco}</span>
+              <span style={{color: colors[2]}}>{posto.Tipo} - {posto.preco}</span>
           </div>
+          <div className={styles.locationContainer}>
+            <span>R:{endereco.Rua} - Nº{endereco.Numero}</span>
+            <span>B:{endereco.Bairro}</span>
+          </div>
+        </div>
       )}
     </div>
   )

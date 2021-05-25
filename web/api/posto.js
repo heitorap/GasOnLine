@@ -4,7 +4,7 @@ import Axios from 'axios';
      All() {
          return Axios({
              method: 'GET',
-             url:'http://localhost/posto/'
+             url:'http://localhost/posto/preco/cidade/1'
          })
      }
  }

@@ -1,8 +1,7 @@
 .container {
     width: 20vw;
-    height: 20vh;
     margin: 2rem;
-    padding: 0 0.5rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     border-style: solid;
@@ -26,8 +25,18 @@
     height: 20px;
 }
 
-.content{
+.content {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.cityArea {
+    margin-left: auto
+}
+
+.locationContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: small;
 }
