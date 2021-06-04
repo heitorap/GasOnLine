@@ -15,4 +15,4 @@ app.use("/posto", posto);
 app.use("/cidade", cidade);
 app.use("/combustivel", combustivel);
 
-app.listen(3000);
+app.listen(80);
