@@ -1,10 +1,10 @@
 import Axios from "axios";
 
 const posto = {
-    getPosto() {
+    getPosto(nameCity) {
         return Axios({
             method: 'GET',
-            url: `http://localhost/posto/`
+            url: `http://localhost/cidade/${nameCity}/postos`
         });
     }
 }

@@ -2,28 +2,30 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-// import { ErrorToast } from "../components/Toast/Toast";
+import { ErrorToast, SuccessToast } from "../components/Toast/Toast";
 import styles from '../styles/Home.module.css';
 import posto from '../api/posto';
 
 export default function Home() {
   const [postos, setPostos] = useState([]);
+  const [nameCity, setNameCity] = useState([]);
+  const Router = useRouter();
 
-  const getPostos = () => {
-    posto.getPosto().then(response => {
-        setPostos(response.data);
-    }).catch(error => {
-        alert('Ocorreu um erro ao buscar os postos.');
-    });
-}
-
-
-  useEffect(() => {
-    getPostos();
-  }, []);
+  // useEffect(() => {
+  //   getPostos();
+  // }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+      posto.getPosto(nameCity).then((response) => {
+        setPostos(response.data);
+        console.log(response.data);
+        Router.push('/dashBoard');
+      }).catch((error) => {
+        ErrorToast('Cidade não encontrada.');
+        console.log(error);
+      });
   };
 
   return (
@@ -54,6 +56,7 @@ export default function Home() {
               placeholder="Cidade"
               className={styles.searchCity}
               maxLength="40"
+              onChange={(event) => setNameCity(event.target.value)}
         />
       </div>
         <input className={styles.buttonSearch} type="submit" value="Pesquisar"></input>
