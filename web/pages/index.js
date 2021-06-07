@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { ErrorToast, SuccessToast } from "../components/Toast/Toast";
 import { PostoContext } from '../components/Context/context';
 import styles from '../styles/Home.module.css';
 import posto from '../api/posto';

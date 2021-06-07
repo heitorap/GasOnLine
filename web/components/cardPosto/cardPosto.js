@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import styles from './postoContainer.module.css';
 import { PostoContext } from '../Context/context';
-import Modal from '../Modal/editModal';
 
 export default function CardPosto() {
   const [postos, setPosto] = useState([]);
