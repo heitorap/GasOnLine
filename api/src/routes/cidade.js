@@ -4,7 +4,6 @@ import CidadeController from '../controller/CidadeController';
 const Route = Router();
 
 Route.get("/", CidadeController.listar);
-Route.get("/:cidade/postos", CidadeController.listarPostos);
 
 Route.post("/cadastrar", CidadeController.cadastrar);
 
