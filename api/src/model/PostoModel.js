@@ -75,7 +75,7 @@ const postoModel = {
         });
     },
 
-    listByPrice(cidadeId, idTipoCombustivel) {
+    listByPrice(cidadeNome, idTipoCombustivel) {
         const query = `
             SELECT COM.preco, 
                    TP.name as Tipo,
@@ -90,11 +90,11 @@ const postoModel = {
              ON PO.id = COM.posto_id
         INNER JOIN cidade  CI
              ON CI.id = PO.cidade_id
-          WHERE CI.id = ?
+          WHERE CI.name LIKE ?
             AND COM.combustivel_type_id = ?
         ORDER BY COM.preco ASC;`;
         return new Promise((resolve, reject) => {
-            db.query(query, [cidadeId, idTipoCombustivel], (error, result) => {
+            db.query(query, [cidadeNome, idTipoCombustivel], (error, result) => {
                 if (error) {
                     reject(error);
                 } else {
