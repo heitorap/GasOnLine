@@ -3,20 +3,25 @@ import { useRouter } from "next/router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { PostoContext } from '../components/Context/context';
-import editCombustivel from '../api/posto';
+import posto from '../api/posto';
 import styles from '../styles/editPosto.module.css';
 
-export default function editPosto(props) {
+export default function editPosto() {
   const [edit, setEdit] = useState([]);
+  const [combustivelType, setCombustivelType] = useState(1);
+  const [precoCombustivel, setPrecoCombustivel] = useState([])
   const Router = useRouter();
 
+
+  const handleChange = (event) => {
+    setCombustivelType(event.target.value);
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    posto.editCombustivel(combustivel_type_id, posto_id).then((response) => {
-      
-      Router.push('/cardPosto');
+    posto.editCombustivel(combustivelType, Router.query.posto_id, precoCombustivel).then((response) => {
+    Router.push('/');
     }).catch((error) => {
       console.log(error);
     });
@@ -36,32 +41,17 @@ export default function editPosto(props) {
         </div>
           <span className={styles.cityArea}>Pompeia</span>
           <div className={styles.contentfirst}>
-                  <span style={{color: colors[0]}}>Gasolina</span>
-                  <span> - R$</span>
-                  <input 
-                    className={styles.editGas}
-                    type="number"
-                    maxLength="10"
-                  />
+              <select onChange={handleChange}>
+                <option value="1">Gasolina</option>
+                <option value="2">Etanol</option>
+                <option value="3">Diesel</option>
+              </select>
+                <input 
+                  className={styles.editGas}
+                  maxLength="10"
+                  onChange={(event) => setPrecoCombustivel(event.target.value)}
+                />
                 </div>
-              <div className={styles.content}>
-                  <span style={{color: colors[1]}}>Etanol</span>
-                  <span> - R$</span>
-                  <input 
-                    className={styles.editEta}
-                    type="number"
-                    maxLength="10"
-                  />
-              </div>
-              <div className={styles.content}>
-                  <span style={{color: colors[2]}}>Diesel</span>
-                  <span> - R$</span>
-                  <input 
-                    className={styles.editDiesel}
-                    type="number"
-                    maxLength="10"
-                  />
-              </div>
               <input className={styles.buttonSave} type="submit" value="Salvar"></input>
       </form>
     </div>

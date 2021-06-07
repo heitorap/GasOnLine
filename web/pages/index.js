@@ -9,6 +9,7 @@ import posto from '../api/posto';
 export default function Home(props) {
   const [postos, setPostos] = useState(false);
   const [nameCity, setNameCity] = useState([]);
+  const [combustivelType, setCombustivelType] = useState([])
   const postoContext = useContext(PostoContext);
   const Router = useRouter();
 
@@ -18,11 +19,8 @@ export default function Home(props) {
     posto.getPosto(nameCity).then((response) => {
       setPostos(response.data);
       postoContext.postos = response.data;
-      console.log(postoContext);
-
       Router.push('/dashBoard');
     }).catch((error) => {
-      ErrorToast('Cidade não encontrada.');
       console.log(error);
     });
   };
@@ -34,15 +32,15 @@ export default function Home(props) {
 
       <div className={styles.fuel}>
         <div>
-          <button className={styles.gasoline} onClick={() => console.log("alert")}>Gasolina</button>
+          <button type="button" className={styles.gasoline} onClick={(event) => setCombustivelType(1)}>Gasolina</button>
         </div>
 
         <div>
-          <button className={styles.etanol}>Etanol</button>
+          <button type="button" className={styles.etanol} onClick={(event) => setCombustivelType(2)}>Etanol</button>
         </div>
 
         <div>
-          <button className={styles.diesel}>Diesel</button>
+          <button type="button" className={styles.diesel} onClick={(event) => setCombustivelType(3)}>Diesel</button>
         </div>
       </div>
         

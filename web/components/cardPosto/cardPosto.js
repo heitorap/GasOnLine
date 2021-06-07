@@ -28,7 +28,11 @@ export default function CardPosto() {
         <div className={styles.container}>
           <div className={styles.header}>
             <span className={styles.title}>{posto.posto}</span>
-            <FontAwesomeIcon className={styles.icon} icon={faEdit} onClick={() => Router.push("/editPosto")}/>
+            <FontAwesomeIcon className={styles.icon} icon={faEdit} onClick={() =>         
+            Router.push({
+              pathname: '/editPosto',
+              query: { posto_id: posto.id_posto, cidade_id: posto.id_cidade },
+            })}/>
           </div>
           <span className={styles.cityArea}>{posto.cidade}</span>
           <div className={styles.content}>
