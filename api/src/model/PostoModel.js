@@ -76,6 +76,7 @@ const postoModel = {
     },
 
     listByPrice(cidadeNome, idTipoCombustivel) {
+        const cidade = cidadeNome ? cidadeNome + '%' : '%';
         const query = `
             SELECT COM.preco, 
                    TP.name as Tipo,
@@ -94,7 +95,7 @@ const postoModel = {
             AND COM.combustivel_type_id = ?
         ORDER BY COM.preco ASC;`;
         return new Promise((resolve, reject) => {
-            db.query(query, [cidadeNome, idTipoCombustivel], (error, result) => {
+            db.query(query, [cidade, idTipoCombustivel], (error, result) => {
                 if (error) {
                     reject(error);
                 } else {
