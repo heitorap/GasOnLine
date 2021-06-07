@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import styles from '../styles/DashBoard.module.css';
 
 export default function dashBoard() {
   const Router = useRouter();
 
   return (
     <div className="main">
-        <p>Tela do dashBoard</p>
+        <header className={styles.header}>
+          <img className={styles.logo} src="/images/gasonline.png"/>
+          <button className={styles.button} onClick={() => Router.push('/')}>Voltar</button>
+        </header>
+        <div className={styles.posto}>Postos encontrados:</div>
+        <CardPosto/>
     </div>
   )
 }

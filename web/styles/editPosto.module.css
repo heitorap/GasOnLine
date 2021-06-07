@@ -1,0 +1,143 @@
+.container {
+    width: 20vw;
+    margin: 2rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    border: 3px blue solid;
+    border-radius: 20px;
+    margin-left: 40%;
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    background-color: rgba(139, 228, 179, 0.712);
+}
+
+.button{
+    border: none;
+    background-color: none;
+    border-radius: 8px;
+    color: black;
+    font-style: bold;
+    font-size: x-large;
+    height: 36px;
+    margin-top: 1.8%;
+    margin-left: 79%;
+}
+
+.buttonSave{
+    background-color: green;
+    margin-top: 45px;
+    color: white;
+    width: 18.5vw;
+    height: 5vh;
+    border-radius: 30px;
+    border: 0px;
+    position: center;
+    font-size: 17px;
+    font-weight: bold;
+    outline: none;
+  }
+
+.logo{
+    width: 12%;
+    height: 4%;
+    margin-left: 1.5%;
+}
+
+.posto{
+    display: flex;
+    margin-left: 42%;
+    margin-top: 20px;
+    color: blue;
+    font-size: 25px;
+}
+
+.searchBy{
+    position: center;
+    margin-left: 45.5%;
+    padding-bottom: 85px;
+    font-size: 27px;
+}
+  
+.searchCity{
+    margin-left: 0.9vw;
+    border: none;
+    font-size: 26px;
+    width: 26.5vw;
+    outline: none;
+    width: 40vw;
+}
+  
+.searchCity:active{
+    margin-left: 0.3vw;
+    border: none;
+    font-size: 26px;
+    width: 26.5vw;
+}
+
+.header1 {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #BEACAC;
+}
+
+.title {
+    color: #4652BF;
+    margin: 0 auto;
+    font-size: 25px;
+}
+
+.edit {
+    width: 20px;
+    height: 20px;
+}
+
+.contentfirst {
+    display: flex;
+    justify-content: left;
+    padding-bottom: 8px;
+    margin-top: 25px;
+}
+
+.content {
+    display: flex;
+    justify-content: left;
+    padding-bottom: 8px;
+    margin-top: 8px;
+}
+
+.cityArea {
+    padding-top: 15px;
+    margin-left: 195px;
+}
+
+.locationContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+}
+
+.editGas{
+    border: 1px blue solid;
+    border-radius: 5px;
+    margin-left: 2px;
+    outline: none;
+}
+
+.editEta{
+    border: 1px blue solid;
+    border-radius: 5px;
+    margin-left: 18px;
+    outline: none;
+}
+
+.editDiesel{
+    border: 1px blue solid;
+    border-radius: 5px;
+    margin-left: 18px;
+    outline: none;
+}

@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { ErrorToast, SuccessToast } from "../components/Toast/Toast";
+import { PostoContext } from '../components/Context/context';
 import styles from '../styles/Home.module.css';
 import posto from '../api/posto';
 
-export default function Home() {
-  const [postos, setPostos] = useState([]);
+export default function Home(props) {
+  const [postos, setPostos] = useState(false);
   const [nameCity, setNameCity] = useState([]);
+  const postoContext = useContext(PostoContext);
   const Router = useRouter();
-
-  // useEffect(() => {
-  //   getPostos();
-  // }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-      posto.getPosto(nameCity).then((response) => {
-        setPostos(response.data);
-        console.log(response.data);
-        Router.push('/dashBoard');
-      }).catch((error) => {
-        ErrorToast('Cidade não encontrada.');
-        console.log(error);
-      });
+    posto.getPosto(nameCity).then((response) => {
+      setPostos(response.data);
+      postoContext.postos = response.data;
+      console.log(postoContext);
+
+      Router.push('/dashBoard');
+    }).catch((error) => {
+      ErrorToast('Cidade não encontrada.');
+      console.log(error);
+    });
   };
 
   return (

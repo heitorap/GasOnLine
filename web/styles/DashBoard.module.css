@@ -1,0 +1,31 @@
+.header{
+    display: flex;
+    width: 100%;
+    background-color: rgba(139, 228, 179, 0.712);
+}
+
+.button{
+    border: none;
+    background-color: none;
+    border-radius: 8px;
+    color: black;
+    font-style: bold;
+    font-size: x-large;
+    height: 36px;
+    margin-top: 1.8%;
+    margin-left: 79%;
+}
+
+.logo{
+    width: 12%;
+    height: 4%;
+    margin-left: 1.5%;
+}
+
+.posto{
+    display: flex;
+    margin-left: 42%;
+    margin-top: 20px;
+    color: blue;
+    font-size: 25px;
+}
