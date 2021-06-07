@@ -37,7 +37,7 @@ const PostoController = {
     },
 
     listByPrice(req, res) {
-        postoModel.listByPrice(req.params.id_cidade, req.params.id_tipo_combustivel)
+        postoModel.listByPrice(req.params.cidade_nome, req.params.id_tipo_combustivel)
             .then((response) => {
                 res.send(response);
             })
