@@ -4,7 +4,7 @@ const posto = {
     getPosto(nameCity) {
         return Axios({
             method: 'POST',
-            url: `http://localhost/posto/cidade`,
+            url: `https://gas-on-line.vercel.app/posto/cidade`,
             data: { cidade:nameCity }
         });
     },
@@ -12,7 +12,7 @@ const posto = {
     getPostoByPrice(id_cidade, id_tipo_combustivel){
         return Axios({
             method: 'GET',
-            url: `http://localhost/preco/cidade/${id_cidade}/tipo_combustivel/${id_tipo_combustivel}`
+            url: `https://gas-on-line.vercel.app/preco/cidade/${id_cidade}/tipo_combustivel/${id_tipo_combustivel}`
         });
     },
 
@@ -20,7 +20,7 @@ const posto = {
         console.log(preco)
         return Axios({
             method: 'PUT',
-            url: `http://localhost/combustivel/${combustivel_type_id}/posto/${posto_id}`,
+            url: `https://gas-on-line.vercel.app/combustivel/${combustivel_type_id}/posto/${posto_id}`,
             data: { value: preco }
         });
     }
